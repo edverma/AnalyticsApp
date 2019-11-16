@@ -1,0 +1,24 @@
+{
+  "name": "Analytics Chrome Extension",
+  "version": "1.0",
+  "description": "A chrome extension tracks your web usage and delivers analytics on it to you, the user.",
+  "background": {
+    "scripts": ["./background/domParsing.js", "./background/browserAction.js", "./background/startup.js"],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "./assets/icons/icon16.png",
+      "24": "./assets/icons/icon24.png",
+      "32": "./assets/icons/icon32.png"
+    }
+  },
+  "permissions": [
+    "webNavigation",
+    "tabs",
+    "identity",
+    "identity.email",
+    "http://localhost:80/*"
+  ],
+  "manifest_version": 2
+}
