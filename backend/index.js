@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path');
 const bodyParser = require('body-parser');
 const db = require('./database/database.js');
 const Entries = require('./database/models.js').Models.Entries;
@@ -33,10 +34,14 @@ app.post('/urlData', (req, res) => {
     });
 });
 
-app.get('/display-analytics', (req, res) => {
+app.get('/get-analytics', (req, res) => {
   Analytics.pythonAnalysis((analysis) => {
     res.send(analysis);
   });
+});
+
+app.get('/display-analytics', (req, res) => {
+    res.sendFile(path.join(__dirname + '/../client/webpage/info.html'));
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

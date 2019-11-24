@@ -2,7 +2,7 @@
   "name": "analytics-server",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "backend/index.js",
   "scripts": {
     "test": "test"
   },

@@ -9,8 +9,6 @@ for line in sys.stdin:
 	break
 jsonInfo = json.loads(jsonInfo)
 
-jsonString = ''
-for info in jsonInfo:
-    jsonString += json.dumps(info)
+jsonString = json.dumps(jsonInfo)
 
 print(jsonString)
