@@ -18,8 +18,11 @@
             "get-analytics",
             function(data) {
                 const dataObj = JSON.parse(data);
-				const keys = Object.keys(dataObj)
-				const values = Object.values(dataObj);
+				let keys = []; let values = [];
+				for (let i=0; i<10; i++) {
+					keys[i] = dataObj[i][0];
+					values[i] = (dataObj[i][1] * 100).toFixed(2);
+				}
 				const ctx = $('#pieChart');
 				var myChart = new Chart(ctx, {
 					type: 'pie',
@@ -27,7 +30,19 @@
 						labels: keys,
 						datasets: [{
 							data: values,
-							borderWidth: 1
+							borderWidth: 1,
+							backgroundColor: [
+								"#FF6F61",
+								"#6B5B95",
+								"#88B04B",
+								"#F7CAC9",
+								"#955251",
+								"#B565A7",
+								"#009B77",
+								"#DD4124",
+								"#D65076",
+								"#45B8AC"
+							]
 						}]
 					}
 				});
@@ -38,9 +53,7 @@
 
 <body>
 
-    THIS IS YOUR DATA
-
-    <!-- Load Facebook SDK for JavaScript -->
+<!--
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -50,13 +63,16 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 
-    <!-- Your share button code -->
     <div class="fb-share-button"
          data-href="https://www.your-domain.com/your-page.html"
          data-layout="button_count">
     </div>
+-->
 
-    <canvas id="pieChart" style="width:20%;height:20%;" ></canvas>
+	<div>
+		<canvas id="pieChart" style="width:20%;height:20%;" ></canvas>
+		
+	</div>
 
 </body>
 

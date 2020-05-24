@@ -1,6 +1,6 @@
 # TODO: create mongodb connection and retrieve all entries for user
 
-import sys, json, re
+import sys, json, operator
 import matplotlib.pyplot as plt
 
 jsonInfo = ''
@@ -35,6 +35,8 @@ for record in jsonInfo:
 for key in domainCounts.keys():
     domainCounts[key] /= totalCount
 
-jsonString = json.dumps(domainCounts)
+domainCountsSorted = sorted(domainCounts.items(),key = operator.itemgetter(1),reverse = True)
+domainCountsLimited = domainCountsSorted[0:10] 
+jsonString = json.dumps(domainCountsLimited)
 
 print(jsonString)
