@@ -1,3 +1,3 @@
 chrome.browserAction.onClicked.addListener((tab) => {
-  chrome.tabs.create({ url: 'http://127.0.0.1:80/display-analytics' });
+  chrome.tabs.create({ url: 'http://161.35.126.149:80/display-analytics' });
 });
