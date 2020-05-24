@@ -1,4 +1,4 @@
-serverUrl = 'http://localhost:80';
+serverUrl = 'http://161.35.126.149:80';
 let oldUrl = '';
 let newUrl = '';
 
