@@ -44,7 +44,7 @@ app.get('/get-analytics', (req, res) => {
 });
 
 app.get('/display-analytics', (req, res) => {
-    res.sendFile(path.join(__dirname + '/../client/webpage/info.html'));
+    res.sendFile(path.join(__dirname + '/./webpage/info.html'));
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

@@ -18,8 +18,13 @@
             "get-analytics",
             function(data) {
                 const dataObj = JSON.parse(data);
-				let keys = []; let values = [];
-				for (let i=0; i<10; i++) {
+	        let keys = []; let values = [];
+	        let max = 10;
+	        if (dataObj.length < 10){
+			max = dataObj.length;
+		}
+			     
+				for (let i=0; i<max; i++) {
 					keys[i] = dataObj[i][0];
 					values[i] = (dataObj[i][1] * 100).toFixed(2);
 				}
