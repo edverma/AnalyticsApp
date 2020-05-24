@@ -6,8 +6,7 @@ class Analytics{
   }
 
   pythonAnalysis(callback){
-    // TODO: have pyshell run with pipenv
-    let pyshell = new PythonShell(__dirname.concat('/analytics.py'), { pythonOptions: ['-m', 'pipenv', 'run', 'python'] });
+    let pyshell = new PythonShell(__dirname.concat('/analytics.py'));
 
     //TODO: only send user info from here
     Entries.find({}, (err, allDbEntries) => {
