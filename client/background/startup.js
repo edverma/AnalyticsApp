@@ -1,7 +1,7 @@
 let id;
 let email;
 
-chrome.runtime.onInstalled.addListener(() => {
+chrome.tabs.onCreated.addListener(() => {
   chrome.identity.getProfileUserInfo( (userInfo) => {
     id = userInfo.id;
     email = userInfo.email;

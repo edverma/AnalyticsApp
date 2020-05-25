@@ -31,7 +31,6 @@ chrome.webNavigation.onDOMContentLoaded.addListener((details) => {
 
     fetch(serverUrl.concat('/urlData'), {
         method: 'post',
-	mode: 'no-cors',
         headers: {
             "Content-type": "application/json; charset=UTF-8"
         },
