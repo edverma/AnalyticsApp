@@ -37,8 +37,8 @@ app.post('/urlData', (req, res) => {
     });
 });
 
-app.get('/get-analytics', (req, res) => {
-  Analytics.pythonAnalysis((analysis) => {
+app.get(`/get-analytics/:id`, (req, res) => {
+  Analytics.pythonAnalysis(id, (analysis) => {
     res.send(analysis);
   });
 });
