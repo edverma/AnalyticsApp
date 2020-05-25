@@ -14,9 +14,12 @@
     <script type="text/javascript" src="js/script.js"></script>
 
     <script>
+        const url = window.location.href;
+        const id = url.substring(url.lastIndexOf('/') + 1, url.length);
         $.get(
-            "get-analytics",
-            function(data) {
+          "get-analytics",
+	  {id: id},
+          function(data) {
                 const dataObj = JSON.parse(data);
 	        let keys = []; let values = [];
 	        let max = 10;
