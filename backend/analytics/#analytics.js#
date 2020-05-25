@@ -11,8 +11,8 @@ class Analytics{
     //TODO: only send user info from here
     Entries.find({"id": id}, (err, allDbEntries) => {
       pyshell.send(JSON.stringify(allDbEntries), { mode: 'json' });
-	pyshell.on('message', results => {
-          callback(results);
+      pyshell.on('message', results => {
+        callback(results);
       });
     });
   }

@@ -37,8 +37,9 @@ app.post('/urlData', (req, res) => {
     });
 });
 
-app.get('/display-analytics/get-analytics', (req, res) => {
-  const id = req.query.id;
+app.get('/get-analytics', (req, res) => {
+    const id = req.query.id;
+    console.log("id: ", id);
   Analytics.pythonAnalysis(id, (analysis) => {
       res.send(analysis);
   });
